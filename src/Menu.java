@@ -28,7 +28,7 @@ public class Menu {
             input = scanner.nextInt();
             if (input == -1) {break;}
 
-            if (input > 0 && input <= moduleList.size()) {moduleList.get(input - 1).Run();}
+            if (input > 0 && input <= moduleList.size()) {moduleList.get(input - 1).Run(); break;}
 
             else{System.out.println("Invalid input. Please enter a number between 1 and " + moduleList.size() + ".");}
         }

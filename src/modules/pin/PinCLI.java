@@ -23,9 +23,13 @@ public class PinCLI extends Module {
         System.out.println("Upperbound:");
         int upperBound = scanner.nextInt();
 
+        //empty buffer
+        scanner.nextLine();
+
         String filename;
         System.out.println("Give me a file name (must be longer than 3 characters):");
         filename = scanner.nextLine();
+
 
         while (filename.length() < 4) {
             System.out.println("Filename should be longer than 3 characters!");
