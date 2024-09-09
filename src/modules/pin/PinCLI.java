@@ -31,7 +31,6 @@ public class PinCLI extends Module {
         if(!filename.substring(filename.length()-4).equals(".txt")){
             filename.concat(".txt");
         }
-
         PinComputer computer = new PinComputer(lowerBound,upperBound);
         computer.writeOut(filename);
     }
