@@ -71,7 +71,12 @@ public class DateCLI extends Module{
         }
 
         System.out.println("Give me a file name:");
-        input = scanner.nextLine();
+        while(input.length()<4){
+            input = scanner.nextLine();
+            if(input.length()<4){
+                System.out.println("Filename should be longer than 3 characters!");
+            }
+        }
         if(!input.substring(input.length()-4).equals(".txt")){
             input.concat(".txt");
         }
