@@ -8,26 +8,29 @@ import modules.date.DateCLI;
 import modules.pin.PinCLI;
 
 public class Menu {
-    private List<Module> moduleList;
-
-
 
     public Menu(){
-        moduleList = new ArrayList<Module>();
+        List<Module> moduleList = new ArrayList<Module>();
         //load modules here:
-        moduleList.add( new DateCLI("DateModule",moduleList.size()+1));
-        moduleList.add( new PinCLI("Pinmodule", moduleList.size()+1));
+        moduleList.add( new DateCLI("DateModule", moduleList.size()+1));
+        moduleList.add( new PinCLI("PinModule", moduleList.size()+1));
 
-        for(int i=0;i<moduleList.size();i++){
-            Module current = moduleList.get(i);
-            System.out.printf("%d. %s\n",current.getId(),current.getName());
+        for (Module current : moduleList) {
+            System.out.printf("%d. %s\n", current.getId(), current.getName());
         }
 
         Scanner scanner = new Scanner(System.in);
-        int input = scanner.nextInt();
-        while(input != -1){
-            moduleList.get(input-1).Run();
-            return;
+
+        int input = 0;
+
+        while (true) {
+            System.out.println("Enter a module number (or -1 to exit):");
+            input = scanner.nextInt();
+            if (input == -1) {break;}
+
+            if (input > 0 && input <= moduleList.size()) {moduleList.get(input - 1).Run();}
+
+            else{System.out.println("Invalid input. Please enter a number between 1 and " + moduleList.size() + ".");}
         }
     }
 }

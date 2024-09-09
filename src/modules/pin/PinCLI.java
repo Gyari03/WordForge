@@ -5,8 +5,6 @@ import modules.Module;
 import utils.ConsoleUtils;
 
 public class PinCLI extends Module {
-    private int lowerBound;
-    private int upperBound;
 
     public PinCLI(String name,int id){
         super(name,id);
@@ -20,10 +18,10 @@ public class PinCLI extends Module {
 
 
         System.out.println("Lowerbound:");
-        lowerBound = scanner.nextInt();
+        int lowerBound = scanner.nextInt();
 
         System.out.println("Upperbound:");
-        upperBound = scanner.nextInt();
+        int upperBound = scanner.nextInt();
 
         String filename;
         System.out.println("Give me a file name (must be longer than 3 characters):");
@@ -35,8 +33,8 @@ public class PinCLI extends Module {
             filename = scanner.nextLine();
         }
 
-        if(!filename.substring(filename.length()-4).equals(".txt")){
-            filename.concat(".txt");
+        if(!filename.endsWith(".txt")){
+            filename = filename.concat(".txt");
         }
         PinComputer computer = new PinComputer(lowerBound,upperBound);
         computer.writeOut(filename);
