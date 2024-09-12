@@ -32,6 +32,9 @@ public class TargetDataCLI extends Module{
         System.out.println("IncludeMonthAndDayCases(true) -it's false by default");
         System.out.println("Exit");
     }
+    public void AddString(String str){
+
+    }
 
 
 
