@@ -25,7 +25,7 @@ public class TargetDataCLI extends Module{
     }
 
     public void Help(){
-        System.out.println("Commandlist:");
+        System.out.println("Command list:");
         System.out.println("AddString(String) -Add a string information");
         System.out.println("AddDate(YYYY/MM/DD) -Add a date information");
         System.out.println("IncludeOnlyYearCases(true) -it's false by default");
